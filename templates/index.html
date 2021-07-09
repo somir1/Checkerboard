@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>checkerboard</title>
+        <style>
+            *{
+                margin 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            table{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .box1{
+                background-color:{{colors1}};
+                height:30px;
+                width:30px;
+            }
+
+            .box2{
+                background-color:{{colors2}};
+                height:30px;
+                width:30px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <table>
+            {%for i in range(input1):%}
+                <tr>
+                    {%for j in range(input2):%}
+                        <td><div class=box{{ (i+j)%2+1}}></div></td>
+                    {%endfor%}
+                </tr>
+            {%endfor%}
+        </table>
+    </body>
+</html>
